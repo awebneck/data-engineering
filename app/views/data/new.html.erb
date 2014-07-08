@@ -1,0 +1,9 @@
+<h1>DATA</h1>
+
+<p>Please upload the data file below</p>
+
+<%= form_for @data_file, url: data_path do |f| %>
+  <%= f.label :file, 'Data file' %>
+  <%= f.file_field :file %>
+  <%= f.submit 'Upload' %>
+<% end %>

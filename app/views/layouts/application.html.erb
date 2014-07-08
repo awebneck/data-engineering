@@ -5,7 +5,15 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <% flash.each do |k, v| %>
+    <div class="flash-<%= k %>"><%= v %></div>
+  <% end %>
 </head>
+<div>
+  <% if current_user %>
+    <ul><li><%= link_to 'Logout', logout_path, method: :delete %></li></ul>
+  <% end %>
+</div>
 <body>
 
 <%= yield %>
