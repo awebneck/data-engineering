@@ -18,10 +18,19 @@ database:
   rake db:create
   rake db:schema:load
 
-Tests can thereafter be run via
+Tests can thereafter be run via:
 
   bundle exec rspec spec
 
-The server can be started via
+The server can be started via:
 
   bundle exec rails s
+
+In order to access the form, you will need to create a user via the console:
+
+  rails c
+
+  > User.create email: 'hoodat@yourdomain.com', password: 'password', password_confirmation: 'password'
+
+Thereafter, log into the application with the email and password used above,
+and you'll be presented with the upload form.
